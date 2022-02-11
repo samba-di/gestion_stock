@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('stock', function (Blueprint $table) {
             $table->id();
-            $table->date_time('date_entree');
-            $table->date_time('date_sortie')->nullable();
+            $table->datetime ('date_entree');
+            $table->datetime('date_sortie')->nullable();
             $table->integer('quantite_entree');
             $table->integer('quantite_sortie')->default(0);
+            $table->foreignId('user_id')->constrained('users')->nullable();
             $table->foreignId('produit_id')->constrained('produits')->cascadeOnDelete();
             $table->timestamps();
 
