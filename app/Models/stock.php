@@ -9,4 +9,17 @@ class stock extends Model
 {
     use HasFactory;
     protected $fillable = ['date_entree', 'date_sortie', 'quantite_entree', 'quantite_sortie', 'produit_id'];
+
+    public function Produits()
+        {
+
+         return $this->hasMany(Produits::class);
+        }
+    public function Users()
+        {
+
+            return $this->hasMany(Users::class);
+
+        }
+
 }

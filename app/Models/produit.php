@@ -9,4 +9,9 @@ class produit extends Model
 {
     use HasFactory;
     protected $fillable = ['nom', 'quantite'];
+    public function Stock()
+        {
+
+         return $this->belongto(Stock::class);
+        }
 }
