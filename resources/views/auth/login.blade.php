@@ -1,9 +1,11 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
+       <x-slot name="logo">
+           <h1>Stock Manager</h1>
+           <h3> Log in</h3>
+           <!-- <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            </a> -->
         </x-slot>
 
         <!-- Session Status -->
@@ -40,10 +42,13 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-between mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
+                    </a> <br/>
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="register">
+                        {{ __('Register') }}
                     </a>
                 @endif
 
